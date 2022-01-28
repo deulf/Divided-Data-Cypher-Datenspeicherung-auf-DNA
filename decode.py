@@ -11,22 +11,22 @@ def decode(dna):
         for i2 in dna:
             binnum2 = dnaToBinary(i2[:3], "ATC")
             binnum2 = (int((''.join(binnum2)), 2))
-            if binnum - 2816 == binnum2:  # Testet dna1[Index,] und dna2[Index,]
+            if binnum - 2816 == binnum2:  # Testet dna1 Index 1 und dna2 Index 1
                 dna3.extend([[i, i2, binnum]])
                 continue
             binnum2 = dnaToBinary(i2[-3:], "ATC")
             binnum2 = (int((''.join(binnum2)), 2))
-            if binnum - 2816 == binnum2:  # Testet dna1[Index,] und dna2[,Index]
+            if binnum - 2816 == binnum2:  # Testet dna1 Index 1 und dna2 Index 2
                 dna3.extend([[i, i2, binnum]])
                 continue
             binnum = dnaToBinary(i[-3:], "ATC")
             binnum = (int((''.join(binnum)), 2))
-            if binnum - 2816 == binnum2:  # Testet dna1[,Index] und dna2[,Index]
+            if binnum - 2816 == binnum2:  # Testet dna1 Index 2 und dna2 Index 2
                 dna3.extend([[i, i2, binnum]])
                 continue
             binnum2 = dnaToBinary(i2[:3], "ATC")
             binnum2 = (int((''.join(binnum2)), 2))
-            if binnum - 2816 == binnum2:  # Testet dna1[,Index] und dna2[Index,]
+            if binnum - 2816 == binnum2:  # Testet dna1 Index 2 und dna2 Index 1
                 dna3.extend([[i, i2, binnum]])
                 continue
     dna3 = sorted(dna3, key=lambda i: i[2], reverse=True)  # Sortiert DNA-Stränge nach Index in richtige Reihenfolge
